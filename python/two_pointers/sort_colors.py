@@ -15,7 +15,7 @@ class Solution:
                 mid += 1
             elif nums[mid] == 1:
                 mid += 1
-            elif nums[mid] == 2:
+            elif nums[mid] == 2: # but don't advance mid because the new nums[mid] needs to be checked
                 nums[mid], nums[right] = nums[right], nums[mid]
                 right -= 1
 
@@ -25,3 +25,5 @@ nums = [2,1,2,0,1,0,1,0,1]
 solution = Solution()
 solution.sortColors(nums)
 print(nums)
+
+#You’re pushing 0s to the front, 2s to the back, and letting 1s stay in the middle.
